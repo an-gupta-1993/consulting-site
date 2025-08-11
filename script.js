@@ -19,6 +19,15 @@ function initializeMobileNav(){const e=document.querySelector(".nav-toggle"),t=d
       
       // Show success message
       form.innerHTML = "<p style='color: var(--brand-2); font-weight: 600;'>Thanks " + name + "! Check your inbox in a moment for the download link.</p>";
+      
+      // Also submit to Netlify (as backup)
+      const formData = new FormData(form);
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      }).catch(() => {}); // Ignore errors, just for Netlify detection
+      
     } catch (error) {
       alert("Thanks! If the form did not submit, email me at anim3sh.gupta@gmail.com");
     }
