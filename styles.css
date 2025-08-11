@@ -547,6 +547,9 @@ blockquote cite { color: var(--muted); font-style: normal; }
 /* Philosophy Section */
 .philosophy-section {
   padding: 80px 0;
+  background: var(--panel-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .philosophy-content {
@@ -569,28 +572,35 @@ blockquote cite { color: var(--muted); font-style: normal; }
 .philosophy-pillars {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 40px;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .pillar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  min-width: 120px;
 }
 
 .pillar-number {
   background: linear-gradient(135deg, var(--brand), var(--brand-2));
   color: var(--bg);
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .pillar-text {
