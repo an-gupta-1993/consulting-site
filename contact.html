@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Animesh Gupta Consulting</title>
+    <meta name="description" content="Contact Animesh Gupta. Book a discovery call or send a message.">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="/">
+                <img src="/assets/logo.svg" alt="Animesh Gupta Consulting" width="28" height="28"/>
+                <span>Animesh Gupta</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="/about.html">About</a>
+                <a href="/services.html">Services</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/contact.html" aria-current="page">Contact</a>
+                <a class="button primary" href="https://calendly.com/anim3sh-gupta/30min" target="_blank" rel="noopener">Schedule a call</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Get in Touch</h1>
+                <p class="lead">Ready to explore AI solutions for your business? Let's start a conversation.</p>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="container">
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Book a Discovery Call</h3>
+                        <p>Prefer to talk? Schedule a free 30-minute consultation to discuss your AI needs and explore potential solutions.</p>
+                        <a class="button primary" href="https://calendly.com/anim3sh-gupta/30min" target="_blank" rel="noopener">Book your free call</a>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Send a Message</h3>
+                        <p>Have a specific question or project in mind? Drop me a note and I'll get back within 1-2 business days.</p>
+                        <form id="contact-form" name="contact" method="POST" data-netlify="true">
+                            <input type="hidden" name="form-name" value="contact"/>
+                            <div class="form-fields">
+                                <input type="text" name="name" placeholder="Your name" required/>
+                                <input type="email" name="email" placeholder="you@company.com" required/>
+                                <textarea name="message" rows="4" placeholder="How can I help?" required></textarea>
+                                <button class="button primary" type="submit">Send message</button>
+                            </div>
+                            <div id="form-message" class="form-message" style="display: none;"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Other ways to connect</h2>
+                <div class="contact-links">
+                    <a href="mailto:anim3sh.gupta@gmail.com" class="contact-link">
+                        <span class="contact-icon">✉️</span>
+                        <span>anim3sh.gupta@gmail.com</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/animeshgupta93/" target="_blank" rel="noopener" class="contact-link">
+                        <span class="contact-icon">💼</span>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-bottom">
+            <small>© <span id="year"></span> Animesh Gupta. All rights reserved.</small>
+        </div>
+    </footer>
+
+    <script src="/script.js" defer></script>
+</body>
+</html>
