@@ -3,7 +3,8 @@ function initializeMobileNav(){const e=document.querySelector(".nav-toggle"),t=d
   if (!form) return;
   
   form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+    // Don't prevent default - let Netlify handle the submission
+    // e.preventDefault();
     
     const nameInput = form.querySelector('input[name="name"]');
     const emailInput = form.querySelector('input[name="email"]');
@@ -11,26 +12,16 @@ function initializeMobileNav(){const e=document.querySelector(".nav-toggle"),t=d
     const name = nameInput?.value?.trim();
     const email = emailInput?.value?.trim();
     
-    if (!name || !email) return;
-    
-    try {
-      // Store in localStorage for now
-      localStorage.setItem("newsletter-optin", email);
-      
-      // Show success message
-      form.innerHTML = "<p style='color: var(--brand-2); font-weight: 600;'>Thanks " + name + "! Check your inbox in a moment for the download link.</p>";
-      
-      // Also submit to Netlify (as backup)
-      const formData = new FormData(form);
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString()
-      }).catch(() => {}); // Ignore errors, just for Netlify detection
-      
-    } catch (error) {
-      alert("Thanks! If the form did not submit, email me at anim3sh.gupta@gmail.com");
+    if (!name || !email) {
+      e.preventDefault();
+      return;
     }
+    
+    // Store in localStorage
+    localStorage.setItem("newsletter-optin", email);
+    
+    // Let the form submit naturally to Netlify
+    // The success page will handle the user experience
   });
 }function setCurrentYear(){const e=document.getElementById("year");e&&(e.textContent=String((new Date).getFullYear()))}document.addEventListener("DOMContentLoaded",(()=>{initializeMobileNav(),initializeNewsletterForm(),setCurrentYear()}));
 
