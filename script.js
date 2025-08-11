@@ -1,4 +1,29 @@
-function initializeMobileNav(){const e=document.querySelector(".nav-toggle"),t=document.querySelector(".site-nav");e&&t&&e.addEventListener("click",(()=>{const n=t.classList.toggle("open");e.setAttribute("aria-expanded",String(n))}))}function initializeNewsletterForm(){const e=document.getElementById("newsletter-form");if(!e)return;const t=e.querySelector('input[type="email"]');e.addEventListener("submit",(async n=>{n.preventDefault();const a=t?.value?.trim();if(!a)return;try{localStorage.setItem("newsletter-optin",a),e.innerHTML="<p>Thanks! Check your inbox in a moment for the download link.</p>"}catch(e){alert("Thanks! If the form did not submit, email me at you@company.com")}}))}function setCurrentYear(){const e=document.getElementById("year");e&&(e.textContent=String((new Date).getFullYear()))}document.addEventListener("DOMContentLoaded",(()=>{initializeMobileNav(),initializeNewsletterForm(),setCurrentYear()}));
+function initializeMobileNav(){const e=document.querySelector(".nav-toggle"),t=document.querySelector(".site-nav");e&&t&&e.addEventListener("click",(()=>{const n=t.classList.toggle("open");e.setAttribute("aria-expanded",String(n))}))}function initializeNewsletterForm(){
+  const form = document.getElementById("newsletter-form");
+  if (!form) return;
+  
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    
+    const nameInput = form.querySelector('input[name="name"]');
+    const emailInput = form.querySelector('input[name="email"]');
+    
+    const name = nameInput?.value?.trim();
+    const email = emailInput?.value?.trim();
+    
+    if (!name || !email) return;
+    
+    try {
+      // Store in localStorage for now
+      localStorage.setItem("newsletter-optin", email);
+      
+      // Show success message
+      form.innerHTML = "<p style='color: var(--brand-2); font-weight: 600;'>Thanks " + name + "! Check your inbox in a moment for the download link.</p>";
+    } catch (error) {
+      alert("Thanks! If the form did not submit, email me at anim3sh.gupta@gmail.com");
+    }
+  });
+}function setCurrentYear(){const e=document.getElementById("year");e&&(e.textContent=String((new Date).getFullYear()))}document.addEventListener("DOMContentLoaded",(()=>{initializeMobileNav(),initializeNewsletterForm(),setCurrentYear()}));
 
 // Contact form handling
 document.addEventListener('DOMContentLoaded', function() {

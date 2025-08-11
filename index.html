@@ -104,9 +104,19 @@
                 <div>
                     <h2>Free resource: Technical‑docs AI agent checklist</h2>
                     <p>Design guardrails, data flows, and evaluation for document‑heavy use cases.</p>
-                    <form class="newsletter" id="newsletter-form" novalidate>
-                        <label class="sr-only" for="newsletter-email">Email</label>
-                        <input id="newsletter-email" name="email" type="email" placeholder="john.doe@gmail.com" required/>
+                    <form class="newsletter" id="newsletter-form" data-netlify="true" name="newsletter-signup" netlify-honeypot="bot-field" novalidate>
+                        <input type="hidden" name="form-name" value="newsletter-signup" />
+                        <p class="sr-only">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
+                        <div class="form-row">
+                            <label class="sr-only" for="newsletter-name">Name</label>
+                            <input id="newsletter-name" name="name" type="text" placeholder="Your name" required/>
+                        </div>
+                        <div class="form-row">
+                            <label class="sr-only" for="newsletter-email">Email</label>
+                            <input id="newsletter-email" name="email" type="email" placeholder="john.doe@gmail.com" required/>
+                        </div>
                         <button class="button primary" type="submit">Get the checklist</button>
                         <p class="form-note">No spam. Unsubscribe anytime.</p>
                     </form>
