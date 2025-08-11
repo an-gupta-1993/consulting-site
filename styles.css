@@ -96,7 +96,12 @@ blockquote p { margin: 0 0 8px; font-size: 18px; }
 blockquote cite { color: var(--muted); font-style: normal; }
 
 /* Lead magnet */
-.lead-magnet { padding: 48px 0; }
+.lead-magnet { 
+  padding: 48px 0; 
+  background: var(--panel-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
 .newsletter { 
   display: flex; 
   flex-direction: column;
@@ -118,7 +123,27 @@ blockquote cite { color: var(--muted); font-style: normal; }
 .newsletter .form-row:last-child {
   justify-content: center;
 }
-.newsletter input { flex: 1; min-width: 200px; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border); background: var(--panel); color: var(--text); }
+.newsletter input { 
+  flex: 1; 
+  min-width: 200px; 
+  padding: 10px 14px; 
+  border-radius: 10px; 
+  border: 1px solid var(--border); 
+  background: var(--panel); 
+  color: var(--text); 
+}
+
+.lead-magnet .lead {
+  color: var(--brand-2);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.lead-magnet p:not(.lead) {
+  color: var(--muted-strong);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
 .newsletter .form-note { color: var(--muted); font-size: 12px; margin: 6px 2px 0; }
 
 /* CTA */
