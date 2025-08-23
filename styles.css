@@ -68,30 +68,13 @@ li { margin: 6px 0; }
 .hero { padding: 64px 0; border-bottom: 1px solid var(--border); }
 .hero .actions { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
 .hero-badges { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; color: var(--muted); font-size: 14px; }
-.hero-art { position: relative; }
 .hero-art img { 
   width: 100%; 
   height: auto; 
   border-radius: var(--radius); 
   box-shadow: var(--shadow); 
   border: 1px solid var(--border);
-  filter: brightness(0.85) contrast(1.1);
-}
-.hero-art::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, 
-    rgba(11, 12, 16, 0.4), 
-    rgba(108, 140, 255, 0.1), 
-    rgba(123, 255, 194, 0.1)
-  );
-  border-radius: var(--radius);
-  pointer-events: none;
-  z-index: 1;
+  filter: brightness(0.95) saturate(0.9);
 }
 
 /* Social proof */
