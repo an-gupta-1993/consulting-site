@@ -26,58 +26,7 @@ function initializeMobileNav(){const e=document.querySelector(".nav-toggle"),t=d
 }function setCurrentYear(){const e=document.getElementById("year");e&&(e.textContent=String((new Date).getFullYear()))}document.addEventListener("DOMContentLoaded",(()=>{initializeMobileNav(),initializeNewsletterForm(),setCurrentYear()}));
 
 // Contact form handling
-document.addEventListener('DOMContentLoaded', function() {
-  const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', handleContactForm);
-  }
-});
-
-function handleContactForm(e) {
-  e.preventDefault();
-  
-  const form = e.target;
-  const formData = new FormData(form);
-  const submitButton = form.querySelector('button[type="submit"]');
-  const messageDiv = document.getElementById('form-message');
-  
-  // Disable submit button and show loading state
-  submitButton.disabled = true;
-  submitButton.textContent = 'Sending...';
-  
-  // Convert FormData to JSON
-  const data = {};
-  formData.forEach((value, key) => {
-    data[key] = value;
-  });
-  
-  // Submit form
-  fetch('/', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data)
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.success) {
-      showFormMessage('success', data.message);
-      form.reset();
-    } else {
-      showFormMessage('error', 'Something went wrong. Please try again.');
-    }
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    showFormMessage('error', 'Something went wrong. Please try again.');
-  })
-  .finally(() => {
-    // Re-enable submit button
-    submitButton.disabled = false;
-    submitButton.textContent = 'Send message';
-  });
-}
+// Removed custom JS submission to allow Netlify native form handling
 
 function showFormMessage(type, message) {
   const messageDiv = document.getElementById('form-message');
