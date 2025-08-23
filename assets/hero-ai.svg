@@ -1,0 +1,115 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7BFFC2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4A90E2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="secondaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667EEA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764BA2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFE66D;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glow effects -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circles -->
+  <circle cx="50" cy="50" r="30" fill="url(#primaryGradient)" opacity="0.1"/>
+  <circle cx="350" cy="80" r="25" fill="url(#secondaryGradient)" opacity="0.1"/>
+  <circle cx="320" cy="250" r="35" fill="url(#accentGradient)" opacity="0.1"/>
+  
+  <!-- Central AI Brain/Network -->
+  <g transform="translate(200, 150)">
+    <!-- Main central node -->
+    <circle cx="0" cy="0" r="25" fill="url(#primaryGradient)" filter="url(#glow)"/>
+    <circle cx="0" cy="0" r="20" fill="white" opacity="0.9"/>
+    <circle cx="0" cy="0" r="15" fill="url(#primaryGradient)"/>
+    
+    <!-- Connected nodes -->
+    <circle cx="-80" cy="-60" r="15" fill="url(#secondaryGradient)" opacity="0.8"/>
+    <circle cx="80" cy="-60" r="15" fill="url(#accentGradient)" opacity="0.8"/>
+    <circle cx="-60" cy="80" r="15" fill="url(#secondaryGradient)" opacity="0.8"/>
+    <circle cx="60" cy="80" r="15" fill="url(#accentGradient)" opacity="0.8"/>
+    
+    <!-- Connection lines -->
+    <line x1="-60" y1="-45" x2="-20" y2="-15" stroke="url(#secondaryGradient)" stroke-width="2" opacity="0.6"/>
+    <line x1="60" y1="-45" x2="20" y2="-15" stroke="url(#accentGradient)" stroke-width="2" opacity="0.6"/>
+    <line x1="-45" y1="60" x2="-15" y2="20" stroke="url(#secondaryGradient)" stroke-width="2" opacity="0.6"/>
+    <line x1="45" y1="60" x2="15" y2="20" stroke="url(#accentGradient)" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Data flow arrows -->
+    <g transform="translate(-40, -40)">
+      <path d="M0,0 L10,-5 L10,5 Z" fill="url(#primaryGradient)"/>
+      <circle cx="0" cy="0" r="3" fill="url(#primaryGradient)"/>
+    </g>
+    
+    <g transform="translate(40, -40)">
+      <path d="M0,0 L-10,-5 L-10,5 Z" fill="url(#accentGradient)"/>
+      <circle cx="0" cy="0" r="3" fill="url(#accentGradient)"/>
+    </g>
+    
+    <g transform="translate(-40, 40)">
+      <path d="M0,0 L10,5 L10,-5 Z" fill="url(#secondaryGradient)"/>
+      <circle cx="0" cy="0" r="3" fill="url(#secondaryGradient)"/>
+    </g>
+    
+    <g transform="translate(40, 40)">
+      <path d="M0,0 L-10,5 L-10,-5 Z" fill="url(#primaryGradient)"/>
+      <circle cx="0" cy="0" r="3" fill="url(#primaryGradient)"/>
+    </g>
+  </g>
+  
+  <!-- Floating data elements -->
+  <g transform="translate(100, 80)">
+    <rect x="0" y="0" width="8" height="8" rx="2" fill="url(#primaryGradient)" opacity="0.7"/>
+    <rect x="12" y="4" width="6" height="6" rx="1" fill="url(#secondaryGradient)" opacity="0.7"/>
+    <rect x="22" y="2" width="10" height="10" rx="2" fill="url(#accentGradient)" opacity="0.7"/>
+  </g>
+  
+  <g transform="translate(280, 120)">
+    <circle cx="0" cy="0" r="4" fill="url(#primaryGradient)" opacity="0.6"/>
+    <circle cx="12" cy="0" r="3" fill="url(#secondaryGradient)" opacity="0.6"/>
+    <circle cx="24" cy="0" r="5" fill="url(#accentGradient)" opacity="0.6"/>
+  </g>
+  
+  <!-- Process flow indicators -->
+  <g transform="translate(150, 220)">
+    <path d="M0,0 L20,0 L15,-5 L20,0 L15,5" stroke="url(#primaryGradient)" stroke-width="2" fill="none" opacity="0.8"/>
+    <path d="M30,0 L50,0 L45,-5 L50,0 L45,5" stroke="url(#secondaryGradient)" stroke-width="2" fill="none" opacity="0.8"/>
+    <path d="M60,0 L80,0 L75,-5 L80,0 L75,5" stroke="url(#accentGradient)" stroke-width="2" fill="none" opacity="0.8"/>
+  </g>
+  
+  <!-- Subtle grid pattern in background -->
+  <g opacity="0.05">
+    <line x1="0" y1="0" x2="400" y2="0" stroke="#7BFFC2" stroke-width="1"/>
+    <line x1="0" y1="50" x2="400" y2="50" stroke="#7BFFC2" stroke-width="1"/>
+    <line x1="0" y1="100" x2="400" y2="100" stroke="#7BFFC2" stroke-width="1"/>
+    <line x1="0" y1="150" x2="400" y2="150" stroke="#7BFFC2" stroke-width="1"/>
+    <line x1="0" y1="200" x2="400" y2="200" stroke="#7BFFC2" stroke-width="1"/>
+    <line x1="0" y1="250" x2="400" y2="250" stroke="#7BFFC2" stroke-width="1"/>
+    <line x1="0" y1="300" x2="400" y2="300" stroke="#7BFFC2" stroke-width="1"/>
+    
+    <line x1="0" y1="0" x2="0" y2="300" stroke="#7BFFC2" stroke-width="1"/>
+    <line x1="50" y1="0" x2="50" y2="300" stroke="#7BFFC2" stroke-width="1"/>
+    <line x1="100" y1="0" x2="100" y2="300" stroke="#7BFFC2" stroke-width="1"/>
+    <line x1="150" y1="0" x2="150" y2="300" stroke="#7BFFC2" stroke-width="1"/>
+    <line x1="200" y1="0" x2="200" y2="300" stroke="#7BFFC2" stroke-width="1"/>
+    <line x1="250" y1="0" x2="250" y2="300" stroke="#7BFFC2" stroke-width="1"/>
+    <line x1="300" y1="0" x2="300" y2="300" stroke="#7BFFC2" stroke-width="1"/>
+    <line x1="350" y1="0" x2="350" y2="300" stroke="#7BFFC2" stroke-width="1"/>
+    <line x1="400" y1="0" x2="400" y2="300" stroke="#7BFFC2" stroke-width="1"/>
+  </g>
+</svg>
